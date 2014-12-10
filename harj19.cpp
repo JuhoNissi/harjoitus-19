@@ -34,32 +34,25 @@ PÄiväys: 8.12.2014
 #include <iostream>
 using namespace std;
 
-int Avarage(int[]);
-
 int main(){
-	int spd[5] = { 0 };
-	int input_spd = 0;
-	int i = 0;
+	int speed[5] = { 0 };
+	int spd = 0;
+	int average;
 
-	while (input_spd >= 0){
+	while (true==true){
 		cout << "Give a Speed: ";
-		cin >> input_spd;
-		cin.get();
-
-		spd[i] = input_spd;
-		i < 5 - 1 ? i++ : i = 0;
-		cout << " ===> ";
-		cout << Avarage(spd);
-		cout << " kmph" << endl;
+		cin >> speed[spd];
+		if (speed[spd] < 0){
+			break;
+		}
+		average = (speed[0] + speed[1] + speed[2] + speed[3] + speed[4]) / 5;
+		cout << " => " << average << " kmph" << endl;
+		spd++;
+		if (spd > 4){
+			spd = 0;
+		}
 	}
 }
 
-int Avarage(int arg[]){
-	int e = sizeof(arg)+1;
-	int a = 0;
-	for (int i = 0; i < e; i++){
-		a += arg[i];
-	}
-	return a / e;
-}
+
 
