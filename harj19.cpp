@@ -27,13 +27,39 @@ Anna nopeus : 50 = > 50 km / h
 Anna nopeus : -5 = > loppu
 
 Toteuta kayttaen taulukkoa.
-Versio 1.0
-PÄiväys: 12.11.2014
+Versio 2.0
+PÄiväys: 8.12.2014
 ********************************/
+
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int Avarage(int[]);
 
+int main(){
+	int spd[5] = { 0 };
+	int input_spd = 0;
+	int i = 0;
+
+	while (input_spd >= 0){
+		cout << "Give a Speed: ";
+		cin >> input_spd;
+		cin.get();
+
+		spd[i] = input_spd;
+		i < 5 - 1 ? i++ : i = 0;
+		cout << " ===> ";
+		cout << Avarage(spd);
+		cout << " kmph" << endl;
+	}
 }
+
+int Avarage(int arg[]){
+	int e = sizeof(arg)+1;
+	int a = 0;
+	for (int i = 0; i < e; i++){
+		a += arg[i];
+	}
+	return a / e;
+}
+
